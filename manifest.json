@@ -30,7 +30,7 @@
       "128" : "logo.png"
   },
   "web_accessible_resources": [
-    "select2/select2.png",
-    "select2/select2-spinner.gif"
+    "chosen/chosen-sprite.png",
+    "chosen/chosen-sprite@2x.gif"
   ]
 }
