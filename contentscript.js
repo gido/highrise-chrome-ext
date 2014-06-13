@@ -48,4 +48,8 @@ function triggerDOMEvent($el, type, bubbles, cancelable) {
             .insertAfter(closeDiv)
         ;
     });
+
+    $('.recording_content .menu_target').click(function() {
+        $(this).parent().find('.menu_content select').trigger('chosen:updated');
+    });
 })(jQuery);
