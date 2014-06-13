@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+
+  "name": "Extend Highrise",
+  "description": "Just make it work a bit better",
+  "version": "1.0",
+  "content_scripts" : [
+    {
+      "matches" : [
+        "https://*.highrisehq.com/*"
+      ],
+      "js" : [
+        "jquery-1.11.1.min.js",
+        "chosen/chosen.jquery.min.js",
+        "contentscript.js"
+      ],
+      "css": [
+        "chosen/chosen.chromeext.css",
+        "styles.css"
+      ],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ],
+  "permissions": [
+    "tabs"
+  ],
+  "icons" : {
+      "48" : "logo.png",
+      "128" : "logo.png"
+  },
+  "web_accessible_resources": [
+    "select2/select2.png",
+    "select2/select2-spinner.gif"
+  ]
+}
