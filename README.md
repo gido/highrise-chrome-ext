@@ -6,7 +6,7 @@ Chrome Extension for [Highrise](https://highrisehq.com/) to make it easier to fi
 TODO
 ----
 
- - [ ] Add Chosen on some input select
+ - [x] Add Chosen on some input select
 
 License
 -------
