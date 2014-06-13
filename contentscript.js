@@ -1,13 +1,13 @@
 $jq = jQuery.noConflict();
 
 /**
- * Create and trigger raw DOM event on a jQuery object
- * @param jQuery $el
+ * Create and trigger native DOM event
+ * @param DOMElement $el
  * @param string type event type
  * @param boolean bubbles
  * @param boolean cancelable
  */
-function triggerDOMEvent($el, type, bubbles, cancelable) {
+function triggerDOMEvent(el, type, bubbles, cancelable) {
 
     if (typeof bubbles == "undefined") {
         bubbles = true;
@@ -16,13 +16,9 @@ function triggerDOMEvent($el, type, bubbles, cancelable) {
         cancelable = true;
     }
 
-    $el.each(function() {
-        var evt = document.createEvent("HTMLEvents");
-        evt.initEvent(type, bubbles, cancelable);
-        console.log('dispatchEvent on ');
-        console.log(this);
-        this.dispatchEvent(evt);
-    });
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent(type, bubbles, cancelable);
+    el.dispatchEvent(evt);
 }
 
 ;(function($) {
@@ -37,7 +33,7 @@ function triggerDOMEvent($el, type, bubbles, cancelable) {
 
             $(this).unbind('change');
 
-            triggerDOMEvent($(this), 'change', false, true);
+            triggerDOMEvent(this, 'change', false, true);
         });
 
         $('<a class="refresh" href="#">Refresh</a>')
